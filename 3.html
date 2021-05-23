@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>测试xhr的异步、同步阻塞问题</div>
+    <script>
+        let xhr = new XMLHttpRequest();
+        // true异步；false同步
+        xhr.open("get", 'http://127.0.0.1:3000', false);
+
+        xhr.send();
+        xhr.onload = function(){
+            console.log(arguments)
+        }
+        for(let i=0;i<300;i++){
+            console.log(i)
+        }
+    </script>
+</body>
+</html>

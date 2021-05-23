@@ -11,9 +11,34 @@ function animate() {
     if (divWidth > 800) return void 0;
     divWidth += 4;
     div.style.width = divWidth + "px";
-    window.requestIdleCallback(print);
+    // window.requestIdleCallback(print);
     window.requestAnimationFrame(() => {
         animate();
+    });
+}
+function animateAsleep() {
+    if (divWidth > 800) return void 0;
+    divWidth += 4;
+    div.style.width = divWidth + "px";
+    sleep(20);
+    window.requestIdleCallback(print);
+    window.requestAnimationFrame(() => {
+        animateAsleep();
+    });
+}
+let flag = 1;
+function animateSleepOnce() {
+    if (divWidth > 800) return void 0;
+    divWidth += 4;
+    div.style.width = divWidth + "px";
+    window.requestAnimationFrame(() => {
+        flag++;
+        console.log(flag)
+        if(flag == 5){
+            console.log('sleep')
+            sleep(2000);
+        }
+        animateSleepOnce();
     });
 }
 /**
@@ -36,8 +61,11 @@ let divWidth = 20;
 //     div.style.background = "red";
 // })
 // 3. 查看一直执行计算的js代码在渲染流程中的执行时机：由于JS一直执行，导致页面前期一直空白；并后期一直丢帧
-for(let i=0;i<100000;i++){
-    div.innerHTML = i;
-}
-animate();
-// 4. 查看一帧中睡眠20ms的性能数据
+// for(let i=0;i<100000;i++){
+//     div.innerHTML = i;
+// }
+// animate();
+// 4. 查看一帧中睡眠20ms的性能数据：rIC由于每一帧的时间大于了16ms，所有导致所有的idleCb一直没有执行；都堆到了最后执行（所有idle应该执行优先级低的任务）
+// animateAsleep();
+// 5. 查看rAF是否会被js阻塞：回的
+animateSleepOnce();
