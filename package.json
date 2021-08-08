@@ -1,0 +1,23 @@
+{
+  "name": "problem",
+  "version": "1.0.0",
+  "description": "- 1. 异步的串行、并行执行\r - 2. requestAnimateFrame调试\r - 5. Promise.all实现\r - 6. 逗号运算符\r - 7. server设置文件max-age为1分钟，html的meta设置max-age为0；缓存策略使用调试。",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lil-El/problem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lil-El/problem/issues"
+  },
+  "homepage": "https://github.com/Lil-El/problem#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
