@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-control" content="max-age=99">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        let xhr = new XMLHttpRequest();
-        xhr.open("get", "http://127.0.0.1:3000/file")
-        xhr.onload = ()=>{}
-        xhr.send();
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                padding: 50px;
+            }
+            .skeleton {
+                background: linear-gradient(
+                    100deg,
+                    rgba(255, 255, 255, 0) 40%,
+                    rgba(255, 255, 255, 0.5) 50%,
+                    rgba(255, 255, 255, 0) 60%
+                );
+                background-size: 200% 100%;
+                background-position-x: 180%;
+                background-color: rebeccapurple;
+                animation: skeleton-loading 1s ease infinite;
+            }
+            @keyframes skeleton-loading {
+                to {
+                    background-position-x: -20%;
+                }
+            }
+            .title {
+                height: 30px;
+                width: 500px;
+            }
+            .body {
+                margin-top: 10px;
+                height: 100px;
+                width: 500px;
+                 animation-delay: .05s; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title skeleton"></div>
+        <div class="body skeleton"></div>
+    </body>
 </html>

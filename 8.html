@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #popup{
+                margin: 100px auto;
+                padding: 10px 12px;
+                width: 400px;
+                border: 1px solid red;
+                border-radius: 4px;
+                line-height: 36px;
+                font-weight: 700;
+                font-size: 20px;
+            }
+            .text {
+                animation: text-loading 1s ease;
+            }
+            @keyframes text-loading {
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="popup"></div>
+        <script>
+            const text = "这是一段很长很长很长so long很长很很长so long长很长很长so long很长很长很长很长so long的文本".repeat(3);
+            const popup = document.getElementById("popup");
+            function append(index){
+                let curText = text[index];
+                if(curText === undefined) return void 0;
+                let span = document.createElement('span');
+                span.classList.add("text")
+                span.innerText = curText;
+                setTimeout(()=>{
+                    popup.append(span);
+                    append(index + 1)
+                }, 200)
+            }
+            append(0)
+        </script>
+    </body>
+</html>
