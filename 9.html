@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 100px;
+            background-color: #ffffff;
+        }
+        .soft-ui{
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .ui-flat-bulge{
+            box-shadow:  15px 15px 30px #e6e6e6,
+                        -15px -15px 30px #ffffff;
+        }
+        .ui-circular-bulge{
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            box-shadow:  15px 15px 30px #e6e6e6,
+                        -15px -15px 30px #ffffff;
+        }
+        .ui-circular-concave{
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            box-shadow:  15px 15px 30px #e6e6e6,
+                        -15px -15px 30px #ffffff;
+        }
+        .ui-flat-concave{
+            box-shadow: inset 15px 15px 30px #e6e6e6,
+                        inset -15px -15px 30px #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div>
+            <p>
+                新拟态是一种图形样式，其原理是为界面的UI元素赋予真实感。
+                原生名词有几个叫法，Neumorphism / soft ui，翻译过来是新拟态或者是软ui。国内的翻译叫，新拟物风格。
+                Neumorphism，是New +Skeuomorphism的组合词。
+            </p>
+            <ul>
+                <li>扁平-凸出</li>
+                <li>扁平-凹回</li>
+                <li>圆滑-凸出</li>
+                <li>圆滑-凹回</li>
+            </ul>
+        </div>
+        <div class="soft-ui ui-flat-bulge"></div>
+        <div class="soft-ui ui-circular-concave"></div>
+        <div class="soft-ui ui-flat-concave"></div>
+        <div class="soft-ui ui-circular-bulge"></div>
+    </body>
+</body>
+</html>
