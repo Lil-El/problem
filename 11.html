@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+        <script src="./Particleground.js"></script>
+        <style>
+            body {
+                background-color: #242645;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+            minSpeedX	0.1	
+            maxSpeedX	0.7	
+            minSpeedY	0.1	
+            maxSpeedY	0.7	
+            directionX	‘center’	可用值 ‘center’, ‘left’ 和’right’.
+            directionY	‘center’	可用值’center’, ‘up’ 和 ‘down’.
+            density	10000	确定生成多少料子
+            dotColor	‘#666666’	 点的颜色
+            lineColor	‘#666666’	 线的颜色
+            particleRadius	7	 粒子半径
+            Dot size		 点的大小
+            lineWidth	1	 线的宽度
+            curvedLines	false	线是否弯曲
+            proximity	100	两个点间多远开始连
+            parallax	true	 视差效果
+            parallaxMultiplier	5	数量越低,视差效果更强
+            onInit	function() {}	初始时调用函数
+            onDestroy	function() {}	销毁时调用函数
+         -->
+        <canvas className="pg-canvas" width="1112" height="937"></canvas>
+        <script>
+            $("body").particleground({
+                dotColor: "#E8DFE8",
+                lineColor: "#1b3273",
+            });
+        </script>
+    </body>
+</html>
